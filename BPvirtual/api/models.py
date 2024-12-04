@@ -53,8 +53,8 @@ class Employee(models.Model):
 class Task(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
-    assigned_to = models.ForeignKey(
-        Employee, on_delete=models.SET_NULL, null=True, related_name='tasks',
+    assigned_to = models.ManyToManyField(
+        Employee, blank=True, related_name='tasks',
         help_text="Employee of the task."
     )
     team = models.ForeignKey(

@@ -9,17 +9,16 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
 # Team Serializer
 class TeamSerializer(serializers.ModelSerializer):
-    leader = CustomUserSerializer(read_only=True)  # Inclui detalhes do líder na resposta
-    employee_count = serializers.IntegerField(read_only=True)  # Campo personalizado do modelo
+    leader = serializers.PrimaryKeyRelatedField(queryset=CustomUser.objects.all())  # Inclui detalhes do líder na resposta
 
     class Meta:
         model = Team
-        fields = ['id', 'name', 'description', 'leader', 'employee_count']
+        fields = ['id', 'name', 'description', 'leader']
 
 # Employee Serializer
 class EmployeeSerializer(serializers.ModelSerializer):
     team = serializers.PrimaryKeyRelatedField(queryset=Team.objects.all(), allow_null=True)
-    tasks = serializers.PrimaryKeyRelatedField(queryset=Task.objects.all(), many=True, required=False)
+
 
     class Meta:
         model = Employee
@@ -27,9 +26,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
 # Task Serializer
 class TaskSerializer(serializers.ModelSerializer):
-    assigned_to = serializers.PrimaryKeyRelatedField(queryset=Employee.objects.all(), allow_null=True)
-    team = serializers.PrimaryKeyRelatedField(queryset=Team.objects.all(), allow_null=True)
+    assigned_to = serializers.PrimaryKeyRelatedField(queryset=Employee.objects.all(), allow_null=False, many=True)
 
     class Meta:
         model = Task
-        fields = ['id', 'title', 'description', 'assigned_to', 'team', 'due_date', 'completed']
+        fields = ['id', 'title', 'description', 'assigned_to', 'due_date', 'completed']

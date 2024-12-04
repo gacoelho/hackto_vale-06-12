@@ -15,5 +15,5 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('title', 'due_date', 'completed', 'team', 'assigned_to')
+    list_display = ('title', 'due_date', 'completed', 'team')
 
