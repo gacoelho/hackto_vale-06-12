@@ -1,0 +1,21 @@
+version: "3.1"
+
+rules:
+
+- rule: Say despedida anytime the user says goodbye
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+rules:
+- rule: Solicitar informações adicionais enquanto espera na fila
+  steps:
+  - intent: solicitar_ajuda
+  - action: action_colocar_na_fila_prioritaria
+  - action: utter_ask_descricao_problema
+  - active_loop: ask_more_details

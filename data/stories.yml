@@ -1,0 +1,57 @@
+version: "3.1"
+
+stories:
+
+- story: urgencia path
+  steps:
+  - intent: urgencia
+  - action: action_colocar_na_fila_prioritaria
+  - action: utter_fila_prioritaria
+
+
+- story: Coletar informações adicionais
+  steps:
+  - intent: fornecer_informacoes
+  - action: action_save_problem_details
+  - action: utter_ask_detalhes_adicionais
+  - intent: fornecer_informacoes
+  - action: action_save_additional_details
+  - action: utter_acknowledge
+  
+- story: happy path
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_despedida
+
+- story: Cumprimento inicial
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+
+- story: Despedida
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+

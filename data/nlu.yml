@@ -1,0 +1,66 @@
+version: "3.1"
+
+nlu:
+
+- intent: urgencia
+  examples: |
+    - Urgente
+    - Urgencia
+    - Preciso falar imendiatamente com o BP!
+    - Preciso falar com alguem imediatamente!
+    - Preciso falar com alguém pra ontem!
+
+- intent: saudacao
+  examples: |
+    - Olá
+    - Oi
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+
+- intent: despedida
+  examples: |
+    - Tchau
+    - Até mais
+    - Falou
+
+- intent: affirm
+  examples: |
+    - sim
+    - s
+    - certo
+    - claro
+    - correto
+    - isso
+
+- intent: deny
+  examples: |
+    - não
+    - nao
+    - nunca
+    - nem pensar 
+
+- intent: mood_great
+  examples: |
+    - perfeito
+    - ótimo
+    - incrivel
+    - maravilhoso
+    - estou bem
+    - muito bem
+
+- intent: mood_unhappy
+  examples: |
+    - meu dia está horrivel
+    - estou triste  
+    - Não estou muito bem
+    - muito triste
+    - não to feliz
+
+- intent: bot_challenge
+  examples: |
+    - você é um robot?
+    - você é um humano?
+    - estou falando com quem?
+    - estou falando com uma pessoa?
+    - estou falando com um humano?
