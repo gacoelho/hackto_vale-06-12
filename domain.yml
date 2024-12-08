@@ -7,6 +7,11 @@ intents:
   - saudacao
   - despedida
   - feedback
+  - carreira
+  - cultura
+  - comite
+  - desligamento
+  - desenvolvimento
 
 responses:
 
@@ -37,6 +42,11 @@ actions:
   - action_colocar_na_fila_prioritaria
   - action_save_problem_details
   - action_save_feedback
+  - action_carreira
+  - action_cultura
+  - action_comite
+  - action_desligamento
+  - action_desenvolvimento
 
 slots:
   urgencia:

@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: urgencia path
+- story: Urgencia path
   steps:
   - intent: urgencia
   - action: action_colocar_na_fila_prioritaria
@@ -10,6 +10,31 @@ stories:
   - intent: fornecer_informacoes
   - action: action_save_problem_details
   - action: utter_acknowledge
+
+- story: Carreira/desempenho path
+  steps:
+  - intent: carreira
+  - action: action_carreira
+  
+- story: Cultura Path
+  steps:
+  - intent: cultura
+  - action: action_cultura
+
+- story: Comitê Path
+  steps:
+  - intent: comite
+  - action: action_comite
+
+- story: Desligamento Path
+  steps:
+  - intent: desligamento
+  - action: action_desligamento
+
+- story: Ciclo de Desenvolvimento
+  steps:
+  - intent: desenvolvimento
+  - action: action_desenvolvimento 
 
 - story: Cumprimento inicial
   steps:

@@ -45,3 +45,44 @@ class ActionSaveFeedBack(Action):
         dispatcher.utter_message(text="Obrigado pelo feedback! Com isso você nos ajuda amelhor o seu atendimento :)")
 
         return [SlotSet("feedback", feedback), FollowupAction('utter_despedida')]
+    
+class ActionCarreira(Action):
+    def name(self):
+        return "action_carreira"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você quer falar sobre Carreira")
+
+class ActionCultura(Action):
+    def name(self):
+        return "action_cultura"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você quer falar sobre Cultura")
+
+class ActionComite(Action):
+    def name(self):
+        return "action_comite"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você quer falar sobre Comitê")
+
+class ActionDesligamento(Action):
+    def name(self):
+        return "action_desligamento"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você quer falar sobre Desligamento")
+
+class ActionDesenvolvimento(Action):
+    def name(self):
+        return "action_desenvolvimento"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você quer falar sobre Desenvolvimento")
+
+
+
+
+
+

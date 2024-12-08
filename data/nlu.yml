@@ -6,9 +6,62 @@ nlu:
   examples: |
     - Urgente
     - Urgencia
-    - Preciso falar imendiatamente com o BP!
+    - Preciso falar imendiatamente com o BP com urgencia!
     - Preciso falar com alguem imediatamente!
-    - Preciso falar com alguém pra ontem!
+
+- intent: carreira
+  examples: |
+    - Quero falar sobre a carreira de um funcionário
+    - Falar sobre a carreira de um colaborador
+    - Preciso falar sobre a minha carreira
+    - carreira
+    - desempenho
+    - quero falar sobre o desenhempenho de um funcionário
+    - oportunidade de crescimento
+    - movimentação de carreira
+    - movimentação
+
+- intent: cultura
+  examples: |
+    - Como está o clima da esquipe?
+    - Inclusão
+    - Diversidade
+    - D&I
+    - Gostaria de falar sobre a cultura do equipe
+    - Quero falar sobre Inclusão 
+    - Queri falar sobre Diversidade e Inclusão
+    - Gostaria de falar sobre o clime da minha equipe
+
+- intent: comite
+  examples: |
+    - Quero criar um comitê
+    - Falar sobre o comitê
+    - Quando será o comitê
+    - Preciso da ajuda um comite multi-disciplinar
+    - comite
+    - comite multi-disciplinar
+
+- intent: desligamento
+  examples: |
+    - preciso desligar um funcionário
+    - quero desligar um funcionário
+    - preciso demitir alguem
+    - preciso falar sobre demição
+    - desligamento
+    - demitir
+    - demição
+    - quero falar sobra de missão de um colaborador
+    - demitir um colaborador
+    - desligar colaborador
+
+- intent: desenvolvimento
+  examples: |
+    - queria falar sobre o ciclo de desenvolvimento da equipe
+    - desenvolvimento
+    - ciclo de desenvolvimento
+    - quero falar sobre o desenvolvimento de um colcaborador
+    - quero falar sobre o meu ciclo de desemvolvimento
+    - desenvolvimento de um funcionário 
 
 - intent: fornecer_informacoes
   examples: |
