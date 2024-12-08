@@ -1,72 +1,71 @@
 version: "3.1"
 
 intents:
-  - urgencia 
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
+  - fornecer_informacoes
+  - urgencia
   - bot_challenge
   - saudacao
   - despedida
+  - feedback
 
 responses:
-  reach_BP_urgencia:
-  - text: "Certo, já contatamos o BP,  Você é o numero da fila de prioridade. Não deve demorar para ele te atender."
-  
-  utter_cheer_up:
-  - text: "O que houve? Tem algo que eu possa fazer?"
-
-  utter_did_that_help:
-  - text: "Isso foi util para você?"
-
-  utter_happy:
-  - text: "Muito bom, ouvir isso! Algo que eu possar ajudar?"
-
-  utter_goodbye:
-  - text: "Bye"
 
   utter_iamabot:
-  - text: "Eu sou um bot assistente do Conexão BP."
+    - text: "Eu sou um bot assistente do Conexão BP."
 
   utter_saudacao:
-  - text: "Olá! Como posso ajudar?"
+    - text: "Olá! Como posso ajudar?"
 
   utter_despedida:
-  - text: "Até logo! Tenha um ótimo dia."
+    - text: "Até logo! Tenha um ótimo dia."
 
   utter_fila_prioritaria:
-  - text: "Sua chamada foi registrada como urgente e você foi colocado na fila prioritária."
-  
-  utter_ask_descricao_problema:
-  - text: "Por favor, descreva brevemente o problema que está enfrentando."
+    - text: "Enquanto você espera fale mais sobre seu prolema para que possamos resolver ele mais rápido possivel"
 
   utter_ask_detalhes_adicionais:
-  - text: "Você gostaria de adicionar mais algum detalhe sobre o problema?"
+    - text: "Você gostaria de adicionar mais algum detalhe sobre o problema?"
 
+  utter_acknowledge:
+    - text: "As suas informações já foram repassadas ao BP."
+  
+  utter_ask_for_feedback:
+    - text: "Como foi seu atendimento? Nos ajude dando seu feedback!"
+
+  
 
 actions:
   - action_colocar_na_fila_prioritaria
+  - action_save_problem_details
+  - action_save_feedback
 
 slots:
   urgencia:
     type: bool
     influence_conversation: false
     mappings:
-      - type: custom
+      - type: from_intent
+        value: true
+        intent: urgencia
 
   descricao_problema:
     type: text
     influence_conversation: false
     mappings:
-      - type: custom
-
-  detalhes_adicionais:
+      - type: from_text
+    
+  feedback:
     type: text
     influence_conversation: false
     mappings:
-      - type: custom
+      - type: from_text
+
+
+forms:
+  ask_more_details:
+    required_slots:
+      - descricao_problema
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+

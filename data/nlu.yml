@@ -10,6 +10,30 @@ nlu:
     - Preciso falar com alguem imediatamente!
     - Preciso falar com alguém pra ontem!
 
+- intent: fornecer_informacoes
+  examples: |
+    - Estou com dificuldade no sistema
+    - Não consigo acessar minha conta
+    - Preciso de ajuda com o pagamento
+    - problema trabalista
+    - É um problema técnico
+    - problema pessoal
+    - assunto sensivel
+
+- intent: feedback
+  examples: |
+    - Muito boa
+    - Boa
+    - OK
+    - Podia ser melhor
+    - Lenta
+    - Não resolveu
+    - Resolveu
+    - ruim
+    - pessima
+    - horrivel
+
+
 - intent: saudacao
   examples: |
     - Olá
@@ -38,24 +62,9 @@ nlu:
     - não
     - nao
     - nunca
-    - nem pensar 
-
-- intent: mood_great
-  examples: |
-    - perfeito
-    - ótimo
-    - incrivel
-    - maravilhoso
-    - estou bem
-    - muito bem
-
-- intent: mood_unhappy
-  examples: |
-    - meu dia está horrivel
-    - estou triste  
-    - Não estou muito bem
-    - muito triste
-    - não to feliz
+    - nem pensar
+    - quero resolver no particular
+    - é particular
 
 - intent: bot_challenge
   examples: |
