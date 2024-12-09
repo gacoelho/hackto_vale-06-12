@@ -13,10 +13,15 @@ intents:
   - desligamento
   - desenvolvimento
   - ajuda
+  - informacao_nome
+  - informacao_motivo
   - affirm
   - deny
 
 responses:
+
+  utter_default:
+    - text: "Desculpe, não entendi. Pode reformular sua pergunta?"
 
   utter_iamabot:
     - text: "Eu sou Amanda, um bot assistente do Conexão BP. Com o que posso auxiliar? Diga 'ajuda' caso queira saber o que posso fazer."
@@ -27,28 +32,38 @@ responses:
   utter_fila_prioritaria:
     - text: "Enquanto você espera fale mais sobre seu prolema para que possamos resolver ele mais rápido possivel"
 
-  utter_ask_detalhes_adicionais:
-    - text: "Você gostaria de adicionar mais algum detalhe sobre o problema?"
-
+  utter_fila:
+    - text: "Enquanto você espera fale mais sobre seu prolema para que possamos resolver ele mais rápido possivel"
+ 
   utter_acknowledge:
     - text: "As suas informações já foram repassadas ao BP."
   
   utter_ask_for_feedback:
     - text: "Como foi seu atendimento? Nos ajude dando seu feedback!"
 
+  utter_ask_nome_funcionario:
+    - text: "Por favor, informe o nome do funcionário. [Maria, João, Ana, Carlos]"
+
+  utter_ask_motivo_desligamento:
+    - text: "Qual é o motivo do desligamento?"
+  
 
 actions:
   - action_colocar_na_fila_prioritaria
+  - action_colocar_na_fila
   - action_save_problem_details
   - action_save_feedback
   - action_carreira
   - action_cultura
   - action_comite
-  - action_desligamento
   - action_desenvolvimento
   - action_greet_user
   - action_ajuda
   - action_informacao
+  - action_default_fallback
+  - action_fetch_employee_analysis
+  - action_process_dismissal
+
 
 slots:
   urgencia:
@@ -64,6 +79,16 @@ slots:
     influence_conversation: false
     mappings:
       - type: from_text
+
+  nome_funcionario:
+    type: text
+    mappings:
+      - type: from_text
+
+  motivo_desligamento:
+    type: text
+    mappings:
+      - type: from_text
     
   feedback:
     type: text
@@ -76,7 +101,6 @@ slots:
     mappings:
       - type: from_text
   
-
 
 
 forms:

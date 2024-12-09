@@ -155,3 +155,36 @@ nlu:
     - estou falando com quem?
     - estou falando com uma pessoa?
     - estou falando com um humano?
+
+- intent: informacao_nome
+  examples: |
+    - O nome do funcionário é João Silva
+    - O nome dele é Maria Souza
+    - O colaborador se chama Carlos Alberto
+    - Chama-se Ana
+    - Funcionario João
+    - Nome: Marcos
+    - Chamado: Fernanda
+    - O nome do funcionário é João 
+    - O nome do funcionário é Maria 
+    - O nome do funcionário é Carlos 
+    - O nome do funcionário é Ana 
+    - Nome: João 
+    - Nome: Maria 
+    - Nome: Carlos 
+    - Nome: Ana 
+    - João 
+    - Maria
+    - Carlos 
+    - Ana
+  
+- intent: informacao_motivo
+  examples: |
+    - O motivo é redução de quadro
+    - Preciso demitir devido a baixo desempenho
+    - O motivo é falta de comprometimento
+    - A razão é a reestruturação
+    - Por questões pessoais
+    - O motivo é comportamento inadequado
+    - Desempenho insatisfatório
+    - Por corte de custos
