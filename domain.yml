@@ -18,9 +18,6 @@ responses:
   utter_iamabot:
     - text: "Eu sou um bot assistente do Conexão BP."
 
-  utter_saudacao:
-    - text: "Olá! Como posso ajudar?"
-
   utter_despedida:
     - text: "Até logo! Tenha um ótimo dia."
 
@@ -36,7 +33,6 @@ responses:
   utter_ask_for_feedback:
     - text: "Como foi seu atendimento? Nos ajude dando seu feedback!"
 
-  
 
 actions:
   - action_colocar_na_fila_prioritaria
@@ -47,6 +43,7 @@ actions:
   - action_comite
   - action_desligamento
   - action_desenvolvimento
+  - action_greet_user
 
 slots:
   urgencia:
@@ -68,6 +65,13 @@ slots:
     influence_conversation: false
     mappings:
       - type: from_text
+  
+  user_name:
+    type: text
+    mappings:
+      - type: from_text
+  
+
 
 
 forms:
@@ -78,4 +82,9 @@ forms:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+slot_mapping:
+  user_name:
+    - type: from_trigger_intent
+      value: "{user_name}"
 

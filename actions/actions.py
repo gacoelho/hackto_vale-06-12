@@ -81,6 +81,20 @@ class ActionDesenvolvimento(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="Entendido, você quer falar sobre Desenvolvimento")
 
+class ActionGreetUser(Action):
+    def name(self):
+        return "action_greet_user"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_name = tracker.latest_message.get("metadata", {}).get("user_name")
+
+        if user_name:
+            message = f"Olá gestor {user_name}! Como posso te ajudar?"
+        else:
+            message = "Olá Usuário! Como posso te ajudar?"
+        
+        dispatcher.utter_message(text=message)
+
 
 
 

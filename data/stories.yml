@@ -39,7 +39,7 @@ stories:
 - story: Cumprimento inicial
   steps:
   - intent: saudacao
-  - action: utter_saudacao
+  - action: action_greet_user
 
 - story: Despedida e feedback
   steps:
