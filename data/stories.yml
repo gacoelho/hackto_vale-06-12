@@ -11,6 +11,11 @@ stories:
   - action: action_save_problem_details
   - action: utter_acknowledge
 
+- story: Ajuda path
+  steps:
+  - intent: ajuda
+  - action: action_ajuda
+
 - story: Carreira/desempenho path
   steps:
   - intent: carreira
@@ -49,4 +54,7 @@ stories:
   - action: action_save_feedback
   - action: utter_despedida
 
-
+- story: Informacao
+  steps:
+  - intent: fornecer_informacoes
+  - action: action_informacao

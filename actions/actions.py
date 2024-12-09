@@ -81,6 +81,13 @@ class ActionDesenvolvimento(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="Entendido, você quer falar sobre Desenvolvimento")
 
+class ActionInformacao(Action):
+    def name(self):
+        return "action_informacao"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você deseja uma informação")
+
 class ActionGreetUser(Action):
     def name(self):
         return "action_greet_user"
@@ -89,14 +96,24 @@ class ActionGreetUser(Action):
         user_name = tracker.latest_message.get("metadata", {}).get("user_name")
 
         if user_name:
-            message = f"Olá gestor {user_name}! Como posso te ajudar?"
+            message = f"Olá gestor {user_name}! Como posso te ajudar? Diga 'ajuda' para saber tudo que posso fazer."
         else:
-            message = "Olá Usuário! Como posso te ajudar?"
+            message = "Olá Usuário! Como posso te ajudar? Diga 'ajuda' para saber tudo que posso fazer."
         
         dispatcher.utter_message(text=message)
 
+class ActionInformacao(Action):
+    def name(self):
+        return "action_informacao"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Entendido, você deseja uma informação")
 
-
-
+class ActionAjuda(Action):
+    def name(self):
+        return "action_ajuda"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Certo, eu posso te ajudar com as seguintes tarefas:\n1 -> Carreira\n2 -> Cultura\n3 -> Comitê\n4 -> Desligamento\n5 -> Ciclo de Desenvolvimento\n6 -> Informação\n7 -> Emergência\n")
 
 

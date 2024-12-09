@@ -12,11 +12,14 @@ intents:
   - comite
   - desligamento
   - desenvolvimento
+  - ajuda
+  - affirm
+  - deny
 
 responses:
 
   utter_iamabot:
-    - text: "Eu sou um bot assistente do Conexão BP."
+    - text: "Eu sou Amanda, um bot assistente do Conexão BP. Com o que posso auxiliar? Diga 'ajuda' caso queira saber o que posso fazer."
 
   utter_despedida:
     - text: "Até logo! Tenha um ótimo dia."
@@ -44,6 +47,8 @@ actions:
   - action_desligamento
   - action_desenvolvimento
   - action_greet_user
+  - action_ajuda
+  - action_informacao
 
 slots:
   urgencia:

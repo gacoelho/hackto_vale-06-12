@@ -9,7 +9,7 @@ const client = new Client({
 const RASA_SERVER_URL = "https://7828-179-218-48-230.ngrok-free.app/webhooks/rest/webhook"
 
 client.once('ready', () => {
-	console.log('Bot conectado como ${client.user.tag}!');
+	console.log('Bot está Conectado!');
 });
 
 client.on('messageCreate', async (message) => {
@@ -17,7 +17,6 @@ client.on('messageCreate', async (message) => {
 
 	try {
 		const userName = message.member.displayName || message.author.username;
-		console.log(userName);
 
 		const response = await axios.post(RASA_SERVER_URL, {
 			sender: message.author.id,
