@@ -1,0 +1,37 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_process_dismissal\"}}]": "action_colocar_na_fila",
+      "[{\"prev_action\": {\"action_name\": \"action_process_dismissal\"}}, {\"prev_action\": {\"action_name\": \"action_colocar_na_fila\"}}]": "utter_feedback",
+      "[{\"prev_action\": {\"action_name\": \"action_process_dismissal\"}}, {\"prev_action\": {\"action_name\": \"action_colocar_na_fila\"}}, {\"prev_action\": {\"action_name\": \"utter_feedback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"informacao_motivo\"}}]": "action_fetch_employee_analysis",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"informacao_motivo\"}}, {\"prev_action\": {\"action_name\": \"action_fetch_employee_analysis\"}, \"user\": {\"intent\": \"informacao_motivo\"}}]": "utter_analysis_result",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"informacao_motivo\"}}, {\"prev_action\": {\"action_name\": \"action_fetch_employee_analysis\"}, \"user\": {\"intent\": \"informacao_motivo\"}}, {\"prev_action\": {\"action_name\": \"utter_analysis_result\"}, \"user\": {\"intent\": \"informacao_motivo\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"informacao_nome\"}}]": "utter_ask_motivo_desligamento",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"informacao_nome\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_motivo_desligamento\"}, \"user\": {\"intent\": \"informacao_nome\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"desligamento\"}}]": "utter_ask_nome_funcionario",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"desligamento\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_nome_funcionario\"}, \"user\": {\"intent\": \"desligamento\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_default_fallback",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"action_default_fallback\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "handling active loops and forms - ask_more_details",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_process_dismissal\"}}, {\"prev_action\": {\"action_name\": \"action_colocar_na_fila\"}}]",
+      "handling active loops and forms - ask_more_details - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"action_default_fallback\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_process_dismissal\"}}, {\"prev_action\": {\"action_name\": \"action_colocar_na_fila\"}}, {\"prev_action\": {\"action_name\": \"utter_feedback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_process_dismissal\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]"
+    ]
+  }
+}

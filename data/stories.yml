@@ -26,10 +26,16 @@ stories:
   - intent: comite
   - action: action_comite
 
-- story: Desligamento Path
+- story: Solicitar nome e motivo para desligamento
   steps:
   - intent: desligamento
-  - action: action_desligamento
+  - action: utter_ask_nome_funcionario
+  - intent: informacao_nome
+  - action: action_fetch_employee_analysis
+  - action: utter_ask_motivo_desligamento
+  - intent: informacao_motivo
+  - action: action_process_dismissal
+  - action: action_colocar_na_fila
 
 - story: Ciclo de Desenvolvimento
   steps:
