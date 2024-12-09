@@ -11,6 +11,11 @@ stories:
   - action: action_save_problem_details
   - action: utter_acknowledge
 
+- story: Ajuda path
+  steps:
+  - intent: ajuda
+  - action: action_ajuda
+
 - story: Carreira/desempenho path
   steps:
   - intent: carreira
@@ -45,7 +50,7 @@ stories:
 - story: Cumprimento inicial
   steps:
   - intent: saudacao
-  - action: utter_saudacao
+  - action: action_greet_user
 
 - story: Despedida e feedback
   steps:
@@ -55,4 +60,7 @@ stories:
   - action: action_save_feedback
   - action: utter_despedida
 
-
+- story: Informacao
+  steps:
+  - intent: fornecer_informacoes
+  - action: action_informacao

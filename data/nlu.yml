@@ -6,8 +6,21 @@ nlu:
   examples: |
     - Urgente
     - Urgencia
-    - Preciso falar imendiatamente com o BP com urgencia!
-    - Preciso falar com alguem imediatamente!
+    - Preciso falar imediatamente com o BP com urgencia!
+    - Preciso falar com alguem imediatamente!\
+    - Emergência!
+    - 7
+
+- intent: ajuda
+  examples: |
+    - ajuda
+    - Ajuda
+    - Preciso de ajuda
+    - Alguém me ajuda
+    - Auxílio
+    - Socorro
+    - Preciso de algo
+    - Resgate
 
 - intent: carreira
   examples: |
@@ -20,6 +33,7 @@ nlu:
     - oportunidade de crescimento
     - movimentação de carreira
     - movimentação
+    - 1
 
 - intent: cultura
   examples: |
@@ -31,6 +45,7 @@ nlu:
     - Quero falar sobre Inclusão 
     - Queri falar sobre Diversidade e Inclusão
     - Gostaria de falar sobre o clime da minha equipe
+    - 2
 
 - intent: comite
   examples: |
@@ -40,6 +55,7 @@ nlu:
     - Preciso da ajuda um comite multi-disciplinar
     - comite
     - comite multi-disciplinar
+    - 3
 
 - intent: desligamento
   examples: |
@@ -53,18 +69,26 @@ nlu:
     - quero falar sobra de missão de um colaborador
     - demitir um colaborador
     - desligar colaborador
+    - 4
 
 - intent: desenvolvimento
   examples: |
     - queria falar sobre o ciclo de desenvolvimento da equipe
     - desenvolvimento
     - ciclo de desenvolvimento
-    - quero falar sobre o desenvolvimento de um colcaborador
-    - quero falar sobre o meu ciclo de desemvolvimento
+    - quero falar sobre o desenvolvimento de um colaborador
+    - quero falar sobre o meu ciclo de desenvolvimento
     - desenvolvimento de um funcionário 
+    - 5
 
 - intent: fornecer_informacoes
   examples: |
+    - Informação
+    - Informações
+    - Quero saber de algo
+    = Preciso de uma intel
+    - Inteligência
+    - Auxílio para decisões
     - Estou com dificuldade no sistema
     - Não consigo acessar minha conta
     - Preciso de ajuda com o pagamento
@@ -72,6 +96,7 @@ nlu:
     - É um problema técnico
     - problema pessoal
     - assunto sensivel
+    - 6
 
 - intent: feedback
   examples: |
@@ -100,6 +125,10 @@ nlu:
     - Tchau
     - Até mais
     - Falou
+    - Isso é tudo
+    - Estou satisfeito
+    - Agradecido
+    - Obrigado
 
 - intent: affirm
   examples: |

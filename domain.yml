@@ -12,6 +12,7 @@ intents:
   - comite
   - desligamento
   - desenvolvimento
+  - ajuda
   - informacao_nome
   - informacao_motivo
   - affirm
@@ -23,10 +24,7 @@ responses:
     - text: "Desculpe, não entendi. Pode reformular sua pergunta?"
 
   utter_iamabot:
-    - text: "Eu sou um bot assistente do Conexão BP."
-
-  utter_saudacao:
-    - text: "Olá! Como posso ajudar?"
+    - text: "Eu sou Amanda, um bot assistente do Conexão BP. Com o que posso auxiliar? Diga 'ajuda' caso queira saber o que posso fazer."
 
   utter_despedida:
     - text: "Até logo! Tenha um ótimo dia."
@@ -59,6 +57,9 @@ actions:
   - action_cultura
   - action_comite
   - action_desenvolvimento
+  - action_greet_user
+  - action_ajuda
+  - action_informacao
   - action_default_fallback
   - action_fetch_employee_analysis
   - action_process_dismissal
@@ -94,6 +95,13 @@ slots:
     influence_conversation: false
     mappings:
       - type: from_text
+  
+  user_name:
+    type: text
+    mappings:
+      - type: from_text
+  
+
 
 forms:
   ask_more_details:
@@ -103,4 +111,9 @@ forms:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+slot_mapping:
+  user_name:
+    - type: from_trigger_intent
+      value: "{user_name}"
 
